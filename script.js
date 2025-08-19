@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateHero();
 
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
+        const scrolled = window.scrollY;
         const parallax = document.querySelector('.hero');
         const speed = scrolled * 0.5;
         parallax.style.transform = `translateY(${speed}px)`;
