@@ -265,11 +265,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                element.textContent = target + '+';
+                element.textContent = target;
                 clearInterval(timer);
+                
+                // Trigger confetti for projects completed when it reaches 4
+                if (target === 4 && element.closest('#projects-stat')) {
+                    triggerConfetti(element.closest('.stat'));
+                }
             } else {
-                element.textContent = Math.floor(current) + '+';
+                element.textContent = Math.floor(current);
             }
         }, 20);
+    }
+
+    function triggerConfetti(statBox) {
+        const confettiContainer = statBox.querySelector('.confetti-container');
+        confettiContainer.innerHTML = '';
+        
+        // Create 15 confetti pieces
+        for (let i = 0; i < 15; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDelay = Math.random() * 1 + 's';
+            confetti.style.animationDuration = (Math.random() * 1 + 1.5) + 's';
+            confettiContainer.appendChild(confetti);
+        }
+        
+        // Clean up confetti after animation
+        setTimeout(() => {
+            confettiContainer.innerHTML = '';
+        }, 3000);
     }
 });
