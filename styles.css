@@ -123,6 +123,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     scroll-margin-top: 70px;
+    border-radius: 30px;
 }
 
 .hero-content {
