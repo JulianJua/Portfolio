@@ -246,7 +246,7 @@ body {
 .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 4rem;
+    gap: 6rem;
     align-items: start;
     min-height: 400px;
 }
@@ -308,8 +308,7 @@ body {
     color: var(--text-white);
     margin: 0 auto;
     box-shadow: var(--shadow-lg);
-    position: sticky;
-    top: 100px;
+    position: static;
 }
 
 .projects {
