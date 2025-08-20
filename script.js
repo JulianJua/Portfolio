@@ -272,6 +272,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (target === 4 && element.closest('#projects-stat')) {
                     triggerConfetti(element.closest('.stat'));
                 }
+                // Trigger confetti for years experience when it reaches 2
+                if (target === 2 && element.closest('#experience-stat')) {
+                    triggerConfetti(element.closest('.stat'));
+                }
             } else {
                 element.textContent = Math.floor(current);
             }
@@ -295,6 +299,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clean up confetti after animation
         setTimeout(() => {
             confettiContainer.innerHTML = '';
-        }, 3000);
+        }, 5000);
     }
 });
