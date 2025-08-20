@@ -309,6 +309,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 10;
+    transition: opacity 1s ease-out;
 }
 
 .confetti {

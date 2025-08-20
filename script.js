@@ -296,9 +296,15 @@ document.addEventListener('DOMContentLoaded', function() {
             confettiContainer.appendChild(confetti);
         }
         
-        // Clean up confetti after animation
+        // Start fading out confetti after 4 seconds
+        setTimeout(() => {
+            confettiContainer.style.opacity = '0';
+        }, 4000);
+        
+        // Clean up confetti after fade completes
         setTimeout(() => {
             confettiContainer.innerHTML = '';
+            confettiContainer.style.opacity = '1'; // Reset for next time
         }, 5000);
     }
 });
