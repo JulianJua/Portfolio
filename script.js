@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         await new Promise(resolve => setTimeout(resolve, 500));
 
         heroTitle.style.opacity = '1';
-        await typeWriter(heroTitle, "Hello! I'm Julian!");
+        await typeWriter(heroTitle, "Hello, I'm Julian!");
         
         heroSubtitle.style.opacity = '1';
         heroSubtitle.style.transform = 'translateY(0)';
