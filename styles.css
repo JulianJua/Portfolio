@@ -238,9 +238,10 @@ body {
 }
 
 .about {
-    padding: 100px 0;
+    padding: 150px 0 100px 0;
     background: var(--bg-white);
     scroll-margin-top: 70px;
+    margin-top: 50px;
 }
 
 .about-content {
