@@ -124,6 +124,37 @@ body {
     margin: 0 auto;
     scroll-margin-top: 70px;
     border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.walking-character {
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    z-index: 10;
+    animation: walk 8s linear infinite;
+}
+
+@keyframes walk {
+    0% {
+        left: -60px;
+        transform: scaleX(1);
+    }
+    48% {
+        transform: scaleX(1);
+    }
+    50% {
+        left: calc(100% + 60px);
+        transform: scaleX(-1);
+    }
+    98% {
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -60px;
+        transform: scaleX(1);
+    }
 }
 
 .hero-content {
