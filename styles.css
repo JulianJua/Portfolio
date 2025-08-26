@@ -130,13 +130,51 @@ body {
 
 .walking-character {
     position: absolute;
-    top: 0;
-    font-size: 2rem;
+    top: -10px;
+    width: 40px;
+    height: 60px;
     z-index: 10;
-    animation: walk 8s linear infinite;
+    animation: walk-across 6s linear infinite;
 }
 
-@keyframes walk {
+.pixel-julian {
+    width: 40px;
+    height: 60px;
+    background: 
+        /* Head */
+        linear-gradient(to right, transparent 12px, #8B4513 28px, transparent 28px),
+        /* Glasses */
+        linear-gradient(to right, transparent 10px, #333 14px, transparent 14px, transparent 18px, #333 22px, transparent 22px, transparent 26px, #333 30px, transparent 30px),
+        /* Hair */
+        linear-gradient(to right, transparent 8px, #2D1810 32px, transparent 32px),
+        /* Hoodie body */
+        linear-gradient(to right, transparent 6px, #8B7355 34px, transparent 34px),
+        /* Arms */
+        linear-gradient(to right, transparent 2px, #8B7355 6px, transparent 6px, transparent 34px, #8B7355 38px, transparent 38px),
+        /* Legs (will animate) */
+        linear-gradient(to right, transparent 14px, #2C1810 18px, transparent 18px, transparent 22px, #2C1810 26px, transparent 26px);
+    
+    background-size: 
+        40px 12px,  /* Head */
+        40px 4px,   /* Glasses */ 
+        40px 8px,   /* Hair */
+        40px 20px,  /* Hoodie */
+        40px 15px,  /* Arms */
+        40px 15px;  /* Legs */
+    
+    background-position:
+        0 12px,     /* Head */
+        0 16px,     /* Glasses */
+        0 8px,      /* Hair */
+        0 25px,     /* Hoodie */
+        0 30px,     /* Arms */
+        0 45px;     /* Legs */
+    
+    background-repeat: no-repeat;
+    animation: walk-legs 0.6s steps(2) infinite;
+}
+
+@keyframes walk-across {
     0% {
         left: -60px;
         transform: scaleX(1);
@@ -154,6 +192,27 @@ body {
     100% {
         left: -60px;
         transform: scaleX(1);
+    }
+}
+
+@keyframes walk-legs {
+    0% {
+        background-position:
+            0 12px,     /* Head */
+            0 16px,     /* Glasses */
+            0 8px,      /* Hair */
+            0 25px,     /* Hoodie */
+            0 30px,     /* Arms */
+            0 45px;     /* Legs - position 1 */
+    }
+    50% {
+        background-position:
+            0 12px,     /* Head */
+            0 16px,     /* Glasses */
+            0 8px,      /* Hair */
+            0 25px,     /* Hoodie */
+            0 30px,     /* Arms */
+            2px 45px;   /* Legs - position 2 (shifted) */
     }
 }
 
