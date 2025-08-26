@@ -130,139 +130,129 @@ body {
 
 .walking-character {
     position: absolute;
-    top: 0px;
-    width: 24px;
-    height: 32px;
+    top: -20px;
+    width: 32px;
+    height: 40px;
     z-index: 10;
-    animation: walk-across 12s linear infinite;
+    animation: walk-across 16s linear infinite;
 }
 
 .pixel-julian {
-    width: 24px;
-    height: 32px;
+    width: 32px;
+    height: 40px;
     image-rendering: pixelated;
     background: 
-        /* Head (cute round) */
-        radial-gradient(circle at center, #D2B48C 6px, transparent 7px),
-        /* Eyes (kawaii style) */
-        radial-gradient(circle at 25% 40%, #333 1px, transparent 2px),
-        radial-gradient(circle at 75% 40%, #333 1px, transparent 2px),
-        /* Glasses */
-        linear-gradient(to right, transparent 3px, #444 4px, transparent 5px, transparent 7px, #444 8px, transparent 9px, transparent 15px, #444 16px, transparent 17px, transparent 19px, #444 20px, transparent 21px),
-        /* Hair (fluffy) */
-        radial-gradient(ellipse at 30% 20%, #2D1810 4px, transparent 5px),
-        radial-gradient(ellipse at 70% 20%, #2D1810 4px, transparent 5px),
-        /* Hoodie */
-        linear-gradient(to right, transparent 4px, #8B7355 20px, transparent 20px),
-        /* Body */
-        linear-gradient(to right, transparent 6px, #A0937D 18px, transparent 18px),
-        /* Legs (walking animation) */
-        linear-gradient(to right, transparent 8px, #556B2F 10px, transparent 10px, transparent 14px, #556B2F 16px, transparent 16px);
+        /* Head (fuller, round) */
+        radial-gradient(circle at center, #D2B48C 8px, transparent 9px),
+        /* Eyes (visible black dots) */
+        radial-gradient(circle at 30% 35%, #000 1.5px, transparent 2px),
+        radial-gradient(circle at 70% 35%, #000 1.5px, transparent 2px),
+        /* Glasses frames */
+        linear-gradient(to right, transparent 6px, #444 8px, transparent 10px, transparent 12px, #444 14px, transparent 16px, transparent 18px, #444 20px, transparent 22px, transparent 24px, #444 26px, transparent 28px),
+        /* Hair (fluffy, fuller) */
+        radial-gradient(ellipse at 25% 15%, #2D1810 6px, transparent 7px),
+        radial-gradient(ellipse at 75% 15%, #2D1810 6px, transparent 7px),
+        radial-gradient(ellipse at 50% 10%, #2D1810 4px, transparent 5px),
+        /* Hoodie (fuller) */
+        linear-gradient(to right, transparent 6px, #8B7355 26px, transparent 26px),
+        /* Body (wider) */
+        linear-gradient(to right, transparent 8px, #A0937D 24px, transparent 24px),
+        /* Arms */
+        linear-gradient(to right, transparent 2px, #8B7355 6px, transparent 6px, transparent 26px, #8B7355 30px, transparent 30px),
+        /* Legs (Mario-style) */
+        linear-gradient(to right, transparent 10px, #2C1810 14px, transparent 14px, transparent 18px, #2C1810 22px, transparent 22px);
     
     background-size: 
-        24px 8px,   /* Head */
-        24px 4px,   /* Eyes 1 */
-        24px 4px,   /* Eyes 2 */
-        24px 2px,   /* Glasses */
-        24px 6px,   /* Hair 1 */
-        24px 6px,   /* Hair 2 */
-        24px 8px,   /* Hoodie */
-        24px 8px,   /* Body */
-        24px 8px;   /* Legs */
+        32px 10px,  /* Head */
+        32px 6px,   /* Eyes 1 */
+        32px 6px,   /* Eyes 2 */
+        32px 3px,   /* Glasses */
+        32px 8px,   /* Hair 1 */
+        32px 8px,   /* Hair 2 */
+        32px 6px,   /* Hair 3 */
+        32px 12px,  /* Hoodie */
+        32px 10px,  /* Body */
+        32px 8px,   /* Arms */
+        32px 10px;  /* Legs */
     
     background-position:
-        0 4px,      /* Head */
-        0 6px,      /* Eyes 1 */
-        0 6px,      /* Eyes 2 */
-        0 7px,      /* Glasses */
+        0 6px,      /* Head */
+        0 9px,      /* Eyes 1 */
+        0 9px,      /* Eyes 2 */
+        0 10px,     /* Glasses */
         0 2px,      /* Hair 1 */
         0 2px,      /* Hair 2 */
-        0 12px,     /* Hoodie */
-        0 16px,     /* Body */
-        0 24px;     /* Legs */
+        0 0px,      /* Hair 3 */
+        0 16px,     /* Hoodie */
+        0 20px,     /* Body */
+        0 22px,     /* Arms */
+        0 30px;     /* Legs */
     
     background-repeat: no-repeat;
-    animation: walk-bob 0.4s ease-in-out infinite, walk-legs 0.8s steps(4) infinite;
+    animation: mario-walk-bob 0.6s ease-in-out infinite, mario-walk-legs 0.5s steps(2) infinite;
 }
 
 @keyframes walk-across {
     0% {
-        left: -30px;
+        left: -40px;
         transform: scaleX(1);
     }
     48% {
         transform: scaleX(1);
     }
     50% {
-        left: calc(100% + 30px);
+        left: calc(100% + 40px);
         transform: scaleX(-1);
     }
     98% {
         transform: scaleX(-1);
     }
     100% {
-        left: -30px;
+        left: -40px;
         transform: scaleX(1);
     }
 }
 
-@keyframes walk-bob {
+@keyframes mario-walk-bob {
     0%, 100% {
         transform: translateY(0px);
     }
-    50% {
+    25% {
+        transform: translateY(-2px);
+    }
+    75% {
         transform: translateY(-1px);
     }
 }
 
-@keyframes walk-legs {
+@keyframes mario-walk-legs {
     0% {
         background-position:
-            0 4px,      /* Head */
-            0 6px,      /* Eyes 1 */
-            0 6px,      /* Eyes 2 */
-            0 7px,      /* Glasses */
+            0 6px,      /* Head */
+            0 9px,      /* Eyes 1 */
+            0 9px,      /* Eyes 2 */
+            0 10px,     /* Glasses */
             0 2px,      /* Hair 1 */
             0 2px,      /* Hair 2 */
-            0 12px,     /* Hoodie */
-            0 16px,     /* Body */
-            0 24px;     /* Legs - normal */
-    }
-    25% {
-        background-position:
-            0 4px,      /* Head */
-            0 6px,      /* Eyes 1 */
-            0 6px,      /* Eyes 2 */
-            0 7px,      /* Glasses */
-            0 2px,      /* Hair 1 */
-            0 2px,      /* Hair 2 */
-            0 12px,     /* Hoodie */
-            0 16px,     /* Body */
-            1px 24px;   /* Legs - step 1 */
+            0 0px,      /* Hair 3 */
+            0 16px,     /* Hoodie */
+            0 20px,     /* Body */
+            0 22px,     /* Arms */
+            0 30px;     /* Legs - together */
     }
     50% {
         background-position:
-            0 4px,      /* Head */
-            0 6px,      /* Eyes 1 */
-            0 6px,      /* Eyes 2 */
-            0 7px,      /* Glasses */
+            0 6px,      /* Head */
+            0 9px,      /* Eyes 1 */
+            0 9px,      /* Eyes 2 */
+            0 10px,     /* Glasses */
             0 2px,      /* Hair 1 */
             0 2px,      /* Hair 2 */
-            0 12px,     /* Hoodie */
-            0 16px,     /* Body */
-            2px 24px;   /* Legs - step 2 */
-    }
-    75% {
-        background-position:
-            0 4px,      /* Head */
-            0 6px,      /* Eyes 1 */
-            0 6px,      /* Eyes 2 */
-            0 7px,      /* Glasses */
-            0 2px,      /* Hair 1 */
-            0 2px,      /* Hair 2 */
-            0 12px,     /* Hoodie */
-            0 16px,     /* Body */
-            1px 24px;   /* Legs - step 3 */
+            0 0px,      /* Hair 3 */
+            0 16px,     /* Hoodie */
+            0 20px,     /* Body */
+            1px 22px,   /* Arms - swing */
+            3px 30px;   /* Legs - wide step */
     }
 }
 
