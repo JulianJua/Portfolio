@@ -75,7 +75,34 @@
                     </div>
                     <div class="about-image">
                         <div class="about-placeholder">
-                            <i class="fas fa-code"></i>
+                            <svg class="waving-character" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Body -->
+                                <ellipse cx="100" cy="140" rx="25" ry="35" fill="#3b82f6"/>
+                                
+                                <!-- Head -->
+                                <circle cx="100" cy="80" r="30" fill="#fbbf24"/>
+                                
+                                <!-- Eyes -->
+                                <circle cx="90" cy="75" r="3" fill="#1f2937"/>
+                                <circle cx="110" cy="75" r="3" fill="#1f2937"/>
+                                
+                                <!-- Smile -->
+                                <path d="M 85 85 Q 100 95 115 85" stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                
+                                <!-- Left arm (static) -->
+                                <ellipse cx="75" cy="120" rx="8" ry="20" fill="#fbbf24" transform="rotate(-20 75 120)"/>
+                                
+                                <!-- Right arm (waving) -->
+                                <g class="waving-arm">
+                                    <ellipse cx="125" cy="120" rx="8" ry="20" fill="#fbbf24" transform="rotate(20 125 120)"/>
+                                    <!-- Hand -->
+                                    <circle cx="130" cy="105" r="6" fill="#fbbf24" class="waving-hand"/>
+                                </g>
+                                
+                                <!-- Legs -->
+                                <ellipse cx="90" cy="175" rx="6" ry="20" fill="#fbbf24"/>
+                                <ellipse cx="110" cy="175" rx="6" ry="20" fill="#fbbf24"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
