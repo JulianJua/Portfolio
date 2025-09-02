@@ -417,6 +417,24 @@ body {
     75% { transform: rotate(-20deg); }
 }
 
+.mouth-animation .neutral-mouth {
+    animation: neutral-fade 4s ease-in-out infinite;
+}
+
+.mouth-animation .smiling-mouth {
+    animation: smile-fade 4s ease-in-out infinite;
+}
+
+@keyframes neutral-fade {
+    0%, 50% { opacity: 1; }
+    50.1%, 100% { opacity: 0; }
+}
+
+@keyframes smile-fade {
+    0%, 50% { opacity: 0; }
+    50.1%, 100% { opacity: 1; }
+}
+
 .projects {
     padding: 80px 0;
     background: var(--bg-light);

@@ -76,32 +76,59 @@
                     <div class="about-image">
                         <div class="about-placeholder">
                             <svg class="waving-character" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Body -->
-                                <ellipse cx="100" cy="140" rx="25" ry="35" fill="#3b82f6"/>
+                                <!-- Hair -->
+                                <rect x="75" y="25" width="50" height="45" fill="#2d2d2d" rx="25"/>
                                 
                                 <!-- Head -->
-                                <circle cx="100" cy="80" r="30" fill="#fbbf24"/>
+                                <rect x="80" y="45" width="40" height="40" fill="#e8a882" rx="20"/>
+                                
+                                <!-- Glasses Frame -->
+                                <rect x="82" y="55" width="36" height="18" fill="none" stroke="#1f2937" stroke-width="2" rx="3"/>
+                                <line x1="100" y1="58" x2="100" y2="70" stroke="#1f2937" stroke-width="1.5"/>
                                 
                                 <!-- Eyes -->
-                                <circle cx="90" cy="75" r="3" fill="#1f2937"/>
-                                <circle cx="110" cy="75" r="3" fill="#1f2937"/>
+                                <rect x="85" y="58" width="6" height="6" fill="#1f2937"/>
+                                <rect x="109" y="58" width="6" height="6" fill="#1f2937"/>
+                                <rect x="86" y="59" width="2" height="2" fill="#ffffff"/>
+                                <rect x="111" y="59" width="2" height="2" fill="#ffffff"/>
                                 
-                                <!-- Smile -->
-                                <path d="M 85 85 Q 100 95 115 85" stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <!-- Nose -->
+                                <rect x="98" y="68" width="4" height="3" fill="#d49574"/>
                                 
-                                <!-- Left arm (static) -->
-                                <ellipse cx="75" cy="120" rx="8" ry="20" fill="#fbbf24" transform="rotate(-20 75 120)"/>
-                                
-                                <!-- Right arm (waving) -->
-                                <g class="waving-arm">
-                                    <ellipse cx="125" cy="120" rx="8" ry="20" fill="#fbbf24" transform="rotate(20 125 120)"/>
-                                    <!-- Hand -->
-                                    <circle cx="130" cy="105" r="6" fill="#fbbf24" class="waving-hand"/>
+                                <!-- Mouth (animated between neutral and smiling) -->
+                                <g class="mouth-animation">
+                                    <!-- Neutral mouth -->
+                                    <rect x="95" y="75" width="10" height="3" fill="#8b4513" class="neutral-mouth"/>
+                                    <!-- Smiling mouth -->
+                                    <g class="smiling-mouth" opacity="0">
+                                        <rect x="93" y="75" width="14" height="3" fill="#8b4513" rx="1"/>
+                                        <rect x="95" y="74" width="2" height="2" fill="#8b4513"/>
+                                        <rect x="103" y="74" width="2" height="2" fill="#8b4513"/>
+                                    </g>
                                 </g>
                                 
+                                <!-- Neck -->
+                                <rect x="92" y="85" width="16" height="10" fill="#e8a882"/>
+                                
+                                <!-- Black Hoodie -->
+                                <rect x="70" y="95" width="60" height="60" fill="#2d2d2d" rx="8"/>
+                                
+                                <!-- Left Arm (static) -->
+                                <rect x="55" y="110" width="20" height="35" fill="#2d2d2d" rx="10"/>
+                                <rect x="58" y="140" width="14" height="20" fill="#e8a882" rx="7"/>
+                                
+                                <!-- Right Arm (waving) -->
+                                <g class="waving-arm">
+                                    <rect x="125" y="110" width="20" height="35" fill="#2d2d2d" rx="10"/>
+                                    <rect x="128" y="140" width="14" height="20" fill="#e8a882" rx="7" class="waving-hand"/>
+                                </g>
+                                
+                                <!-- Jeans -->
+                                <rect x="78" y="155" width="44" height="35" fill="#4682b4" rx="5"/>
+                                
                                 <!-- Legs -->
-                                <ellipse cx="90" cy="175" rx="6" ry="20" fill="#fbbf24"/>
-                                <ellipse cx="110" cy="175" rx="6" ry="20" fill="#fbbf24"/>
+                                <rect x="82" y="185" width="12" height="15" fill="#e8a882"/>
+                                <rect x="106" y="185" width="12" height="15" fill="#e8a882"/>
                             </svg>
                         </div>
                     </div>
