@@ -391,30 +391,12 @@ body {
     position: static;
 }
 
-.waving-character {
+.pixel-character {
     max-width: 100%;
     max-height: 100%;
-}
-
-.waving-arm {
-    transform-origin: 125px 120px;
-    animation: wave 2s ease-in-out infinite;
-}
-
-.waving-hand {
-    transform-origin: 130px 105px;
-    animation: hand-wave 2s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% { transform: rotate(20deg); }
-    50% { transform: rotate(-10deg); }
-}
-
-@keyframes hand-wave {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(20deg); }
-    75% { transform: rotate(-20deg); }
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .mouth-animation .neutral-mouth {
