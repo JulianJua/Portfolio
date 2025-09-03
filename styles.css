@@ -401,8 +401,8 @@ body {
 }
 
 .pixel-character-img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 350px;
+    max-height: 350px;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
