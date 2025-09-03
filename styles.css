@@ -200,16 +200,16 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid #000000;
     cursor: pointer;
     font-size: 1rem;
-    background: var(--primary-color);
+    background: #2c5aa0;
     color: var(--text-white);
     box-shadow: var(--shadow-md);
 }
 
 .btn-primary {
-    background: var(--primary-color);
+    background: #2c5aa0;
     color: var(--text-white);
     box-shadow: var(--shadow-md);
 }
@@ -217,11 +217,11 @@ body {
 .btn-primary:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: var(--shadow-lg);
-    background: #4a90e2;
+    background: #1e3f73;
 }
 
 .btn-secondary {
-    background: var(--primary-color);
+    background: #2c5aa0;
     color: var(--text-white);
     box-shadow: var(--shadow-md);
 }
@@ -229,7 +229,7 @@ body {
 .btn-secondary:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: var(--shadow-lg);
-    background: #4a90e2;
+    background: #1e3f73;
 }
 
 .hero-image {
