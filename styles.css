@@ -200,7 +200,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid #000000;
+    border: 3px solid #000000;
     cursor: pointer;
     font-size: 1rem;
     background: var(--primary-color);
@@ -215,9 +215,8 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-    background: var(--primary-color-dark);
 }
 
 .btn-secondary {
@@ -227,9 +226,8 @@ body {
 }
 
 .btn-secondary:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-    background: var(--primary-color-dark);
 }
 
 .hero-image {
