@@ -145,25 +145,25 @@ body {
     line-height: 1.2;
     background: linear-gradient(
         90deg,
-        #ff0000,
-        #ff8000,
-        #ffff00,
-        #80ff00,
-        #00ff00,
-        #00ff80,
-        #00ffff,
-        #0080ff,
-        #0000ff,
-        #8000ff,
-        #ff00ff,
-        #ff0080,
-        #ff0000
+        #ff0000 0%,
+        #ff8000 8.33%,
+        #ffff00 16.66%,
+        #80ff00 25%,
+        #00ff00 33.33%,
+        #00ff80 41.66%,
+        #00ffff 50%,
+        #0080ff 58.33%,
+        #0000ff 66.66%,
+        #8000ff 75%,
+        #ff00ff 83.33%,
+        #ff0080 91.66%,
+        #ff0000 100%
     );
-    background-size: 400% 100%;
+    background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow-flow 8s linear infinite;
+    animation: rainbow-flow 12s linear infinite;
 }
 
 .highlight {
@@ -414,7 +414,7 @@ body {
         background-position: 0% 50%;
     }
     100% {
-        background-position: -100% 50%;
+        background-position: -300% 50%;
     }
 }
 
