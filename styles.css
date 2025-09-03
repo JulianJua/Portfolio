@@ -163,7 +163,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow-flow 12s linear infinite;
+    animation: rainbow-flow 20s linear infinite;
 }
 
 .highlight {
