@@ -116,7 +116,7 @@ body {
 
 .hero {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
     display: flex;
     align-items: center;
     min-height: 85vh;
