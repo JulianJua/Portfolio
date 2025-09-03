@@ -208,29 +208,11 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.btn-primary {
-    background: var(--primary-color);
-    color: var(--text-white);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
+.btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-    background: var(--primary-color);
 }
 
-.btn-secondary {
-    background: var(--primary-color);
-    color: var(--text-white);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-    background: var(--primary-color);
-}
 
 .hero-image {
     flex: 1;

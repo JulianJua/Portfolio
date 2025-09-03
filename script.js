@@ -3,27 +3,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.querySelector('.navbar');
+    const parallax = document.querySelector('.hero');
 
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
+    const closeMenu = () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    };
+
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
+        const scrollY = window.scrollY;
+        
+        // Navbar background
+        navbar.style.background = scrollY > 100 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = scrollY > 100 ? '0 2px 20px rgba(0, 0, 0, 0.1)' : 'none';
+        
+        // Parallax effect
+        parallax.style.transform = `translateY(${scrollY * 0.5}px)`;
     });
 
     const sections = document.querySelectorAll('section[id]');
@@ -147,27 +149,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     }
 
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.05)';
+    function addHoverEffect(elements, hoverTransform) {
+        elements.forEach(el => {
+            el.addEventListener('mouseenter', () => el.style.transform = hoverTransform);
+            el.addEventListener('mouseleave', () => el.style.transform = 'translateY(0) scale(1)');
         });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
+    }
 
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
+    addHoverEffect(document.querySelectorAll('.skill-item'), 'translateY(-5px) scale(1.05)');
+    addHoverEffect(document.querySelectorAll('.project-card'), 'translateY(-10px) scale(1.02)');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -238,12 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     animateHero();
 
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const parallax = document.querySelector('.hero');
-        const speed = scrolled * 0.5;
-        parallax.style.transform = `translateY(${speed}px)`;
-    });
 
     const stats = document.querySelectorAll('.stat h3');
     const statsObserver = new IntersectionObserver((entries) => {
