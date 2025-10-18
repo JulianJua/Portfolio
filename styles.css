@@ -288,16 +288,17 @@ body {
     pointer-events: none;
     z-index: 10;
     transition: opacity 1s ease-out;
-    overflow: hidden;
+    clip-path: inset(0 0 0 0);
 }
 
 .confetti {
     position: absolute;
+    top: 0;
     width: 6px;
     height: 6px;
     background: var(--primary-color);
     border-radius: 50%;
-    animation: confetti-fall 2s linear infinite;
+    animation: confetti-fall 3s linear forwards;
 }
 
 .confetti:nth-child(2n) { background: var(--accent-color); animation-delay: 0.2s; }
@@ -306,8 +307,20 @@ body {
 .confetti:nth-child(5n) { background: #ef4444; animation-delay: 0.8s; width: 5px; height: 5px; }
 
 @keyframes confetti-fall {
-    0% { transform: translateY(-80px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(180px) rotate(720deg); opacity: 0; }
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @keyframes rainbow-flow {

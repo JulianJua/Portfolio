@@ -188,18 +188,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function triggerConfetti(statBox) {
         const container = statBox.querySelector('.confetti-container');
         container.innerHTML = '';
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 25; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
-            const delay = (i * 0.15) - 2;
-            const duration = 3 + Math.random() * 0.5;
+            const delay = -(Math.random() * 2.5);
+            const duration = 3.5 + Math.random() * 1;
             confetti.style.cssText = `left: ${Math.random() * 100}%; animation-delay: ${delay}s; animation-duration: ${duration}s`;
             container.appendChild(confetti);
         }
-        setTimeout(() => container.style.opacity = '0', 5000);
+        setTimeout(() => container.style.opacity = '0', 5500);
         setTimeout(() => {
             container.innerHTML = '';
             container.style.opacity = '1';
-        }, 6000);
+        }, 6500);
     }
 });
