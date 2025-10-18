@@ -191,7 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < 15; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
-            confetti.style.cssText = `left: ${Math.random() * 100}%; animation-delay: ${Math.random() + 1}s; animation-duration: ${Math.random() + 1.5}s`;
+            const delay = -(Math.random() * 1.5);
+            const duration = 2 + Math.random() * 1;
+            confetti.style.cssText = `left: ${Math.random() * 100}%; animation-delay: ${delay}s; animation-duration: ${duration}s`;
             container.appendChild(confetti);
         }
         setTimeout(() => container.style.opacity = '0', 4000);
