@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
 
-                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                    current = easeOutQuart * finalValue;
+                    const easeOutQuad = 1 - Math.pow(1 - progress, 2);
+                    current = easeOutQuad * finalValue;
 
                     target.textContent = Math.floor(current);
 
