@@ -154,26 +154,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = entry.target;
                 const finalValue = parseInt(target.textContent);
                 let current = 0;
-                const duration = 3000;
-                const startTime = performance.now();
+                const interval = 700;
 
-                const animateCounter = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
+                target.textContent = current;
 
-                    const easeOutQuad = 1 - Math.pow(1 - progress, 2);
-                    current = easeOutQuad * finalValue;
+                const timer = setInterval(() => {
+                    current++;
+                    target.textContent = current;
 
-                    target.textContent = Math.floor(current);
-
-                    if (progress < 1) {
-                        requestAnimationFrame(animateCounter);
-                    } else {
-                        target.textContent = finalValue;
+                    if (current >= finalValue) {
+                        clearInterval(timer);
                     }
-                };
+                }, interval);
 
-                requestAnimationFrame(animateCounter);
                 statsObserver.unobserve(target);
             }
         });
