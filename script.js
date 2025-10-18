@@ -154,20 +154,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = entry.target;
                 const finalValue = parseInt(target.textContent);
                 let current = 0;
-                const increment = finalValue / 100;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= finalValue) {
+                const duration = 2000;
+                const startTime = performance.now();
+
+                const animateCounter = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    current = easeOutQuart * finalValue;
+
+                    target.textContent = Math.floor(current);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animateCounter);
+                    } else {
                         target.textContent = finalValue;
-                        clearInterval(timer);
                         if ((finalValue === 4 && target.closest('#projects-stat')) ||
                             (finalValue === 2 && target.closest('#experience-stat'))) {
                             triggerConfetti(target.closest('.stat'));
                         }
-                    } else {
-                        target.textContent = Math.floor(current);
                     }
-                }, 20);
+                };
+
+                requestAnimationFrame(animateCounter);
                 statsObserver.unobserve(target);
             }
         });
