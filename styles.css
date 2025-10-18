@@ -288,6 +288,7 @@ body {
     pointer-events: none;
     z-index: 10;
     transition: opacity 1s ease-out;
+    overflow: hidden;
 }
 
 .confetti {
@@ -305,10 +306,8 @@ body {
 .confetti:nth-child(5n) { background: #ef4444; animation-delay: 0.8s; width: 5px; height: 5px; }
 
 @keyframes confetti-fall {
-    0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(150px) rotate(360deg); opacity: 0; }
+    0% { transform: translateY(-80px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(180px) rotate(720deg); opacity: 0; }
 }
 
 @keyframes rainbow-flow {

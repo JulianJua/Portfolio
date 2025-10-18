@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = entry.target;
                 const finalValue = parseInt(target.textContent);
                 let current = 0;
-                const duration = 2000;
+                const duration = 3000;
                 const startTime = performance.now();
 
                 const animateCounter = (currentTime) => {
@@ -188,18 +188,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function triggerConfetti(statBox) {
         const container = statBox.querySelector('.confetti-container');
         container.innerHTML = '';
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 20; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
-            const delay = -(Math.random() * 1.5);
-            const duration = 2 + Math.random() * 1;
+            const delay = (i * 0.15) - 2;
+            const duration = 3 + Math.random() * 0.5;
             confetti.style.cssText = `left: ${Math.random() * 100}%; animation-delay: ${delay}s; animation-duration: ${duration}s`;
             container.appendChild(confetti);
         }
-        setTimeout(() => container.style.opacity = '0', 4000);
+        setTimeout(() => container.style.opacity = '0', 5000);
         setTimeout(() => {
             container.innerHTML = '';
             container.style.opacity = '1';
-        }, 5000);
+        }, 6000);
     }
 });
