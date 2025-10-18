@@ -1,1 +1,193 @@
-document.addEventListener('DOMContentLoaded',function(){const e=document.querySelector('.hamburger'),t=document.querySelector('.nav-menu'),n=document.querySelectorAll('.nav-link'),a=document.querySelector('.navbar'),r=document.querySelector('.hero');e.addEventListener('click',function(){e.classList.toggle('active'),t.classList.toggle('active')});const o=()=>{e.classList.remove('active'),t.classList.remove('active')};n.forEach(e=>e.addEventListener('click',o)),window.addEventListener('scroll',function(){const e=window.scrollY;a.style.background=e>100?'rgba(255, 255, 255, 0.98)':'rgba(255, 255, 255, 0.95)',a.style.boxShadow=e>100?'0 2px 20px rgba(0, 0, 0, 0.1)':'none',r.style.transform=`translateY(${.5*e}px)`});const l=document.querySelectorAll('section[id]');function s(){const e=window.scrollY+100;l.forEach(t=>{const a=t.offsetTop,r=t.offsetHeight,o=t.getAttribute('id');e>=a&&e<a+r&&n.forEach(e=>{e.classList.remove('active'),e.getAttribute('href')===`#${o}`&&e.classList.add('active')})})}window.addEventListener('scroll',s);const c=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity='1',e.target.style.transform='translateY(0)')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'}),i=document.querySelectorAll('.project-card, .skill-item, .stat, .contact-item');i.forEach(e=>{e.style.opacity='0',e.style.transform='translateY(20px)',e.style.transition='opacity 0.6s ease, transform 0.6s ease',c.observe(e)});const d=document.querySelector('.contact-form');function u(e){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}function m(e,t){const n=document.createElement('div');n.className=`notification ${t}`,n.textContent=e,n.style.cssText='position: fixed;top: 20px;right: 20px;padding: 15px 20px;border-radius: 8px;color: white;font-weight: 500;z-index: 9999;transform: translateX(400px);transition: transform 0.3s ease;max-width: 300px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);',n.style.background='success'===t?'#10b981':'#ef4444',document.body.appendChild(n),setTimeout(()=>{n.style.transform='translateX(0)'},100),setTimeout(()=>{n.style.transform='translateX(400px)',setTimeout(()=>{document.body.removeChild(n)},300)},4e3)}function y(e,t){e.forEach(e=>{e.addEventListener('mouseenter',()=>e.style.transform=t),e.addEventListener('mouseleave',()=>e.style.transform='translateY(0) scale(1)')})}d.addEventListener('submit',function(e){e.preventDefault();const t=new FormData(d),n=t.get('name'),a=t.get('email'),r=t.get('subject'),o=t.get('message');if(!n||!a||!r||!o)return void m('Please fill in all fields','error');if(!u(a))return void m('Please enter a valid email address','error');const l=d.querySelector('button[type="submit"]'),s=l.textContent;l.textContent='Sending...',l.disabled=!0,setTimeout(()=>{l.textContent=s,l.disabled=!1,d.reset(),m("Message sent successfully! I'll get back to you soon.",'success')},2e3)}),y(document.querySelectorAll('.skill-item'),'translateY(-5px) scale(1.05)'),y(document.querySelectorAll('.project-card'),'translateY(-10px) scale(1.02)'),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t){const e=t.offsetTop-70;window.scrollTo({top:e,behavior:'smooth'})}})});const p=document.querySelector('.hero-title'),f=document.querySelector('.hero-subtitle'),h=document.querySelector('.hero-description'),g=document.querySelector('.hero-buttons');function w(e,t,n=50){return new Promise(a=>{e.innerHTML='';let r=0;const o=setInterval(()=>{r<t.length?(e.innerHTML+=t.charAt(r),r++):(clearInterval(o),a())},n)})}async function v(){p.style.opacity='0',f.style.opacity='0',h.style.opacity='0',g.style.opacity='0',await new Promise(e=>setTimeout(e,500)),p.style.opacity='1',await w(p,"Hello, I'm Julian!"),f.style.opacity='1',f.style.transform='translateY(0)',await new Promise(e=>setTimeout(e,300)),h.style.opacity='1',h.style.transform='translateY(0)',await new Promise(e=>setTimeout(e,300)),g.style.opacity='1',g.style.transform='translateY(0)'}f.style.transform='translateY(20px)',h.style.transform='translateY(20px)',g.style.transform='translateY(20px)',f.style.transition='all 0.6s ease',h.style.transition='all 0.6s ease',g.style.transition='all 0.6s ease',v();const S=document.querySelectorAll('.stat h3'),b=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){const t=e.target,n=parseInt(t.textContent);T(t,n),b.unobserve(t)}})});function T(e,t){let n=0;const a=t/100,r=setInterval(()=>{n+=a,n>=t?(e.textContent=t,clearInterval(r),4===t&&e.closest('#projects-stat')&&E(e.closest('.stat')),2===t&&e.closest('#experience-stat')&&E(e.closest('.stat'))):e.textContent=Math.floor(n)},20)}function E(e){const t=e.querySelector('.confetti-container');t.innerHTML='';for(let e=0;e<15;e++){const e=document.createElement('div');e.className='confetti',e.style.left=100*Math.random()+'%',e.style.animationDelay=Math.random()+1+'s',e.style.animationDuration=1*Math.random()+1.5+'s',t.appendChild(e)}setTimeout(()=>{t.style.opacity='0'},4e3),setTimeout(()=>{t.innerHTML='',t.style.opacity='1'},5e3)}S.forEach(e=>b.observe(e))});
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        navbar.style.background = scrollY > 100 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = scrollY > 100 ? '0 2px 20px rgba(0, 0, 0, 0.1)' : 'none';
+
+        const scrollPos = scrollY + 100;
+        document.querySelectorAll('section[id]').forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+                });
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.project-card, .skill-item, .stat, .contact-item').forEach(el => {
+        el.style.cssText = 'opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+
+        if (!Object.values(data).every(val => val)) {
+            showNotification('Please fill in all fields', 'error');
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+            showNotification('Please enter a valid email address', 'error');
+            return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            form.reset();
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+        }, 2000);
+    });
+
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `position: fixed; top: 20px; right: 20px; padding: 15px 20px; border-radius: 8px; color: white; font-weight: 500; z-index: 9999; transform: translateX(400px); transition: transform 0.3s ease; max-width: 300px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background: ${type === 'success' ? '#10b981' : '#ef4444'}`;
+
+        document.body.appendChild(notification);
+        setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+        setTimeout(() => {
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => document.body.removeChild(notification), 300);
+        }, 4000);
+    }
+
+    document.querySelectorAll('.skill-item, .project-card').forEach(el => {
+        const transform = el.classList.contains('skill-item') ? 'translateY(-5px) scale(1.05)' : 'translateY(-10px) scale(1.02)';
+        el.addEventListener('mouseenter', () => el.style.transform = transform);
+        el.addEventListener('mouseleave', () => el.style.transform = 'translateY(0) scale(1)');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+        });
+    });
+
+    const heroElements = {
+        title: document.querySelector('.hero-title'),
+        subtitle: document.querySelector('.hero-subtitle'),
+        description: document.querySelector('.hero-description'),
+        buttons: document.querySelector('.hero-buttons')
+    };
+
+    async function animateHero() {
+        Object.values(heroElements).forEach(el => el.style.opacity = '0');
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        heroElements.title.style.opacity = '1';
+        let i = 0;
+        const text = "Hello, I'm Julian!";
+        heroElements.title.innerHTML = '';
+        const typeInterval = setInterval(() => {
+            if (i < text.length) {
+                heroElements.title.innerHTML += text.charAt(i++);
+            } else {
+                clearInterval(typeInterval);
+                Object.entries(heroElements).forEach(async ([key, el]) => {
+                    if (key !== 'title') {
+                        await new Promise(resolve => setTimeout(resolve, 300));
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+        }, 50);
+    }
+
+    ['subtitle', 'description', 'buttons'].forEach(key => {
+        heroElements[key].style.cssText = 'transform: translateY(20px); transition: all 0.6s ease';
+    });
+
+    animateHero();
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = parseInt(target.textContent);
+                let current = 0;
+                const increment = finalValue / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= finalValue) {
+                        target.textContent = finalValue;
+                        clearInterval(timer);
+                        if ((finalValue === 4 && target.closest('#projects-stat')) ||
+                            (finalValue === 2 && target.closest('#experience-stat'))) {
+                            triggerConfetti(target.closest('.stat'));
+                        }
+                    } else {
+                        target.textContent = Math.floor(current);
+                    }
+                }, 20);
+                statsObserver.unobserve(target);
+            }
+        });
+    });
+
+    document.querySelectorAll('.stat h3').forEach(stat => statsObserver.observe(stat));
+
+    function triggerConfetti(statBox) {
+        const container = statBox.querySelector('.confetti-container');
+        container.innerHTML = '';
+        for (let i = 0; i < 15; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.cssText = `left: ${Math.random() * 100}%; animation-delay: ${Math.random() + 1}s; animation-duration: ${Math.random() + 1.5}s`;
+            container.appendChild(confetti);
+        }
+        setTimeout(() => container.style.opacity = '0', 4000);
+        setTimeout(() => {
+            container.innerHTML = '';
+            container.style.opacity = '1';
+        }, 5000);
+    }
+});
