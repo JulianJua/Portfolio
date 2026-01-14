@@ -471,6 +471,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
+    justify-items: center;
 }
 
 .category-title {
@@ -485,6 +486,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
+    justify-items: center;
 }
 
 .skill-item {
