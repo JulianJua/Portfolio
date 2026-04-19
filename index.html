@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julian's Portfolio</title>
+    <title>Julian Juarez — Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="bg-wrapper">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Julian's Portfolio</a>
+            <a href="#home" class="nav-logo">JJ</a>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -40,42 +36,70 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Hello, I'm <span class="highlight">Julian!</span></h1>
-                <p class="hero-subtitle">CS Student @ SFSU</p>
-                <p class="hero-description">I like making things.</p>
+                <div class="hero-tag">Available for opportunities</div>
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <span class="hero-name gradient-text">Julian Juarez</span>
+                </h1>
+                <div class="hero-roles">
+                    <span class="role-prefix">I build</span>
+                    <span id="role-text">web applications</span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">CS Student @ SFSU passionate about building things that matter.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="profile.jpg" alt="Julian's Profile Picture" class="profile-image">
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                    <span class="terminal-title">julian@sfsu ~ </span>
+                </div>
+                <div class="terminal-body" id="terminal-body"></div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <div class="section-header">
+                    <span class="section-tag">Who I Am</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I'm a passionate, aspiring, full-stack developer with experience creating websites, chatbots, and community platforms that take in user authentication and have real-time messaging. I mainly do well with modern web technologies.</p>
-                        <p>I like exploring new technologies, contributing to open-source projects, enjoying a walk in the park, or reading.</p>
+                        <p>I'm a passionate, aspiring full-stack developer with experience creating websites, chatbots, and community platforms that support user authentication and real-time messaging. I mainly work with modern web technologies.</p>
+                        <p>Outside of coding, I enjoy exploring new technologies, contributing to open-source projects, taking walks in the park, and reading.</p>
                         <div class="about-stats">
                             <div class="stat" id="projects-stat">
-                                <h3>4</h3>
+                                <div class="stat-number">
+                                    <h3>4</h3>
+                                    <div class="confetti-container"></div>
+                                </div>
                                 <p>Projects Completed</p>
-                                <div class="confetti-container"></div>
                             </div>
                             <div class="stat" id="experience-stat">
-                                <h3>2+</h3>
+                                <div class="stat-number">
+                                    <h3>2</h3>
+                                    <div class="confetti-container"></div>
+                                </div>
                                 <p>Years Experience</p>
-                                <div class="confetti-container"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <div class="about-placeholder">
-                            <img src="2DME.PNG" alt="Pixel Character" class="pixel-character-img">
+                    <div class="about-visual">
+                        <div class="avatar-card">
+                            <span>JJ</span>
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="about-badges">
+                            <div class="floating-badge"><i class="fab fa-js-square"></i> JavaScript</div>
+                            <div class="floating-badge"><i class="fab fa-react"></i> React</div>
+                            <div class="floating-badge"><i class="fab fa-node-js"></i> Node.js</div>
+                            <div class="floating-badge"><i class="fab fa-python"></i> Python</div>
                         </div>
                     </div>
                 </div>
@@ -84,55 +108,55 @@
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-header">
+                    <span class="section-tag">What I've Built</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://julianjua.github.io/Maze-Game/maze.html" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
+                        <div class="project-accent"></div>
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+                            <a href="https://julianjua.github.io/Maze-Game/maze.html" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Interactive Maze Game</h3>
-                            <p class="project-description">A challenging browser-based maze game with dynamic pathfinding, interactive controls, and engaging gameplay mechanics. Navigate through procedurally generated mazes with smooth animations.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">HTML5 Canvas</span>
-                                <span class="tech-tag">CSS3</span>
-                            </div>
+                        <h3 class="project-title">Interactive Maze Game</h3>
+                        <p class="project-description">A challenging browser-based maze game with dynamic pathfinding, interactive controls, and engaging gameplay mechanics. Navigate through procedurally generated mazes with smooth animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5 Canvas</span>
+                            <span class="tech-tag">CSS3</span>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
+                        <div class="project-accent accent-2"></div>
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-robot"></i></div>
+                            <span class="coming-soon-badge">Coming Soon</span>
                         </div>
-                        <div class="project-content">
+                        <h3 class="project-title">AI Chatbot Platform</h3>
+                        <p class="project-description">A full-stack community platform with real-time messaging, user authentication, and AI-powered responses built with modern web technologies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
+                        <div class="project-accent accent-3"></div>
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
+                            <span class="coming-soon-badge">Coming Soon</span>
                         </div>
-                        <div class="project-content">
+                        <h3 class="project-title">Gesture Control System</h3>
+                        <p class="project-description">A computer vision project that translates hand gestures into system controls, leveraging machine learning for real-time gesture recognition.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">ML</span>
                         </div>
                     </div>
                 </div>
@@ -141,67 +165,35 @@
 
         <section id="skills" class="skills">
             <div class="container">
-                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="section-header">
+                    <span class="section-tag">My Toolkit</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                </div>
                 <div class="skills-content">
                     <div class="skill-category">
-                        <h3 class="category-title">Frontend</h3>
+                        <h3 class="category-title"><span class="cat-dot"></span>Frontend</h3>
                         <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML5</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS3</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-js-square"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-react"></i>
-                                <span>React</span>
-                            </div>
+                            <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                            <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                            <div class="skill-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                            <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
                         </div>
                     </div>
-
                     <div class="skill-category">
-                        <h3 class="category-title">Backend</h3>
+                        <h3 class="category-title"><span class="cat-dot dot-violet"></span>Backend</h3>
                         <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fab fa-node-js"></i>
-                                <span>Node.js</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-database"></i>
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-server"></i>
-                                <span>Express.js</span>
-                            </div>
+                            <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                            <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+                            <div class="skill-item"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                            <div class="skill-item"><i class="fas fa-server"></i><span>Express.js</span></div>
                         </div>
                     </div>
-
                     <div class="skill-category">
-                        <h3 class="category-title">Tools & Others</h3>
+                        <h3 class="category-title"><span class="cat-dot dot-cyan"></span>Tools</h3>
                         <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-figma"></i>
-                                <span>Figma</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>Responsive Design</span>
-                            </div>
+                            <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                            <div class="skill-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                            <div class="skill-item"><i class="fas fa-mobile-alt"></i><span>Responsive</span></div>
                         </div>
                     </div>
                 </div>
@@ -210,33 +202,38 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-header">
+                    <span class="section-tag">Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
                 <p class="contact-subtitle">Have a project in mind? Let's work together to bring your ideas to life.</p>
                 <div class="contact-content">
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <h4>Email</h4>
                                 <p>juarezjulian078@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
                             <div>
                                 <h4>Phone</h4>
                                 <p>(415) 314-7312</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <h4>Location</h4>
                                 <p>San Francisco, California</p>
                             </div>
                         </div>
                         <div class="social-links">
-                            <a href="https://www.linkedin.com/in/julian-juarez-a77120306" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/julian-juarez-a77120306" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
                         </div>
                     </div>
                     <form class="contact-form">
@@ -252,7 +249,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
